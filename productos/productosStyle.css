@@ -1,5 +1,5 @@
 #presentacionProductos {
-  background-image: url(/img/productos/presentacionProductos.png);
+  background-image: url(../img/productos/presentacionProductos.png);
   height: 523px;
   display: flex;
   flex-direction: column;
@@ -12,8 +12,6 @@
   height: 63px;
   /* margin-top: 7px; */
 }
-
-
 
 /*-------SECCION 1 PRODUCTOS------*/
 

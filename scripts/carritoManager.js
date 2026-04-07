@@ -10,11 +10,11 @@ export class CarritoManager {
 
     if (!savedCart) {
       console.warn("No hay data de carrito en localStorage, iniciando vacío");
-    }else{
-         console.log(
-      "%cDATA RECUPERADA DE LOCALSTORAGE-",
-      "background-color: #9b9bff; color: black; font-size: 12px",
-    );
+    } else {
+      console.log(
+        "%cDATA RECUPERADA DE LOCALSTORAGE-",
+        "background-color: #9b9bff; color: black; font-size: 12px",
+      );
     }
   }
 
@@ -235,7 +235,12 @@ export class CarritoManager {
     elmProductoCarrito.setAttribute("data-id", id);
     image.classList.add("imgProdCarrito");
 
-    image.src = `${window.location.origin}/${src.replace(/^\//, "")}`;
+    const repoName = window.location.pathname.split("/")[1];
+    const isGitHub = window.location.hostname.includes("github.io");
+    const urlBase = isGitHub ? `/${repoName}/` : "/";
+
+    image.src = `${window.location.origin}${urlBase}${src.replace(/^\//, "")}`;
+
     infoProdCarritoDiv.querySelector(".titleProdCarrito").textContent = nombre;
     infoProdCarritoDiv.querySelector(".priceProdCarrito").textContent =
       `S/ ${precio}.00`;
