@@ -1,7 +1,7 @@
 export class ProductosHomeManager {
   constructor(config) {
     this.botones_producto_home = document.querySelectorAll(
-      ".buttonProdPromHome",
+      ".buttonProdAddToCart",
     );
     /**@type {import("./carritoManager.js").CarritoManager} */
     this.carritoManager = config.carritoManager;
@@ -20,7 +20,7 @@ export class ProductosHomeManager {
 
         if (productoExiste) {
           console.log(
-            "%c¡El producto ya existe!",
+            "%c¡El producto ya está en el carrito!",
             "background-color: #b41717; color: white",
           );
         }
@@ -39,7 +39,7 @@ export class ProductosHomeManager {
             this.carritoManager.agregarProducto(producto);
             this.carritoManager.crearElementoProductoCarrito(data);
             console.log(
-              "%cEl producto NO existe - producto AGREGADO",
+              "%cEl producto NO está en el carrito - producto AGREGADO",
               "background-color: #80bbff; color: black",
             );
           }
@@ -53,4 +53,11 @@ export class ProductosHomeManager {
       });
     });
   }
+
+  // crearElementosProductosCarrito(){
+  //   this.carritoManager.listaCarrito.forEach((prod) => {
+
+  //   })
+
+  // }
 }

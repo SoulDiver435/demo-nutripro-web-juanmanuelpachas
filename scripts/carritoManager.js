@@ -1,9 +1,21 @@
 export class CarritoManager {
   #carritoActivado;
+  /**@type {Object[]} */
   #listaCarrito;
   constructor() {
     this.#carritoActivado = false;
-    this.#listaCarrito = [];
+
+    const savedCart = localStorage.getItem("carrito");
+    this.#listaCarrito = savedCart ? JSON.parse(savedCart) : [];
+
+    if (!savedCart) {
+      console.warn("No hay data de carrito en localStorage, iniciando vacío");
+    }else{
+         console.log(
+      "%cDATA RECUPERADA DE LOCALSTORAGE-",
+      "background-color: #9b9bff; color: black; font-size: 12px",
+    );
+    }
   }
 
   get carritoActivado() {
@@ -32,6 +44,10 @@ export class CarritoManager {
     this.$template = document.getElementById(
       "template-producto-carrito",
     ).content;
+
+    if (this.#listaCarrito.length > 0) {
+      this.rellenarTodosElementosProductosCarrito();
+    }
   }
 
   crearListeners() {
@@ -94,11 +110,10 @@ export class CarritoManager {
           );
 
           if (productoInCart.cantidad <= 0) {
-            this.#listaCarrito = this.listaCarrito.filter(
-              (prod) => prod.id !== id,
-            );
+            this.eliminarProducto(id);
             elmProducto.remove();
-            this.comprobarVisibilidad_section2_carrito()
+            //restaurar mensaje de carrito vacio al quedar sin productos
+            this.comprobarVisibilidad_section2_carrito();
             return;
           }
 
@@ -107,7 +122,7 @@ export class CarritoManager {
             productoInCart.cantidad,
           );
 
-          //TODO restaurar mensaje de carrito vacio al quedar sin productos
+          this.guardarEnLocalStorage();
 
           // console.log("ID de producto YA AGREGADO:", id);
           // console.log(typeBtnCantidad);
@@ -184,6 +199,12 @@ export class CarritoManager {
 
   agregarProducto(producto) {
     this.#listaCarrito.push(producto);
+    this.guardarEnLocalStorage();
+  }
+
+  eliminarProducto(id) {
+    this.#listaCarrito = this.listaCarrito.filter((prod) => prod.id !== id);
+    this.guardarEnLocalStorage();
   }
 
   crearElementoProductoCarrito(data) {
@@ -213,7 +234,8 @@ export class CarritoManager {
 
     elmProductoCarrito.setAttribute("data-id", id);
     image.classList.add("imgProdCarrito");
-    image.src = src;
+
+    image.src = `${window.location.origin}/${src.replace(/^\//, "")}`;
     infoProdCarritoDiv.querySelector(".titleProdCarrito").textContent = nombre;
     infoProdCarritoDiv.querySelector(".priceProdCarrito").textContent =
       `S/ ${precio}.00`;
@@ -229,8 +251,31 @@ export class CarritoManager {
     console.log("template:", elmProductoCarrito);
   }
 
+  rellenarTodosElementosProductosCarrito() {
+    this.#listaCarrito.forEach((prod) => {
+      const data = prod;
+
+      this.crearElementoProductoCarrito(data);
+    });
+  }
+
   actualizarCantidadElmProducto(elm, cantidad) {
     const elmCantidad = elm.querySelector(".cantidadNumCart");
     elmCantidad.textContent = `${cantidad}`;
+  }
+
+  guardarEnLocalStorage() {
+    console.log(
+      "%c-ACTUALIZADO LOCALSTORAGE-",
+      "background-color: #52db57; color: black; font-size: 12px",
+    );
+
+    localStorage.setItem("carrito", JSON.stringify(this.#listaCarrito));
+
+    console.log(
+      "%clocalStorage:",
+      "background-color: #db9b2d; color: black; font-size: 13px",
+      localStorage.carrito,
+    );
   }
 }

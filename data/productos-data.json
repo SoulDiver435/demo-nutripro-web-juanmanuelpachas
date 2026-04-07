@@ -1,0 +1,50 @@
+[
+  {
+    "id": "001",
+    "nombre": "Producto de promoción 1",
+    "precio": 200,
+    "img": "img/promProd_nutripro_1.png"
+  },
+  {
+    "id": "002",
+    "nombre": "Producto de promoción 2",
+    "precio": 200,
+    "img": "img/promProd_nutripro_2.png"
+  },
+  {
+    "id": "003",
+    "nombre": "Producto de promoción 3",
+    "precio": 200,
+    "img": "img/promProd_nutripro_3.png"
+  },
+  {
+    "id": "004",
+    "nombre": "Producto de promoción 4",
+    "precio": 200,
+    "img": "img/promProd_nutripro_4.png"
+  },
+  {
+    "id": "005",
+    "nombre": "Producto de proteínas 1",
+    "precio": 200,
+    "img": "img/proteinas/prodProteinas_1.png"
+  },
+  {
+    "id": "006",
+    "nombre": "Producto de proteínas 2",
+    "precio": 200,
+    "img": "img/proteinas/prodProteinas_2.png"
+  },
+  {
+    "id": "007",
+    "nombre": "Producto de proteínas 3",
+    "precio": 200,
+    "img": "img/proteinas/prodProteinas_3.png"
+  },
+  {
+    "id": "008",
+    "nombre": "Producto de proteínas 4",
+    "precio": 200,
+    "img": "img/proteinas/prodProteinas_4.png"
+  }
+]

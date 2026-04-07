@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/favicon_nutripro_temp_32x32enh.ico"
+    />
     <title>NutriPro - Home</title>
   </head>
   <body>
@@ -21,7 +26,7 @@
       <nav>
         <ul class="listNav">
           <li class="listItemNav pageFontFamily">
-            <a href="./productos.html">Productos</a>
+            <a href="./productos/productos.html">Productos</a>
           </li>
           <li class="listItemNav pageFontFamily">Distribuidores</li>
           <li class="listItemNav pageFontFamily">Compras por Mayor</li>
@@ -33,7 +38,7 @@
         <img src="./img/lupaNutripro.png" alt="" class="iconSearch" />
         <input type="text" placeholder="Buscar..." class="inputFormHome" />
       </form>
-
+      <!-- Ícono de carrito -->
       <img
         src="./img/carrito_48x48.png"
         alt="carritoCompras"
@@ -94,7 +99,7 @@
           </p>
 
           <button
-            class="buttonBase1 buttonProm buttonProdPromHome"
+            class="buttonBase1 buttonProm buttonProdAddToCart"
             data-id="001"
           >
             <img src="./img//icon_button_price_nutripro.png" alt="" />
@@ -116,7 +121,7 @@
             Producto de promoción - Info 02
           </p>
           <button
-            class="buttonBase1 buttonProm buttonProdPromHome"
+            class="buttonBase1 buttonProm buttonProdAddToCart"
             data-id="002"
           >
             <img src="./img//icon_button_price_nutripro.png" alt="" />
@@ -137,7 +142,7 @@
             Producto de promoción - Info 03
           </p>
           <button
-            class="buttonBase1 buttonProm buttonProdPromHome"
+            class="buttonBase1 buttonProm buttonProdAddToCart"
             data-id="003"
           >
             <img src="./img//icon_button_price_nutripro.png" alt="" />
@@ -158,7 +163,7 @@
             Producto de promoción - Info 04
           </p>
           <button
-            class="buttonBase1 buttonProm buttonProdPromHome"
+            class="buttonBase1 buttonProm buttonProdAddToCart"
             data-id="004"
           >
             <img src="./img//icon_button_price_nutripro.png" alt="" />
@@ -277,6 +282,10 @@
       </div>
 
       <div id="sectionProductosCarrito"></div>
+      <div id="setionConfirmarCompra">
+        <div><span>Subtotal</span> <span>S/ 00.00</span></div>
+        <button>Confirmar compra</button>
+      </div>
     </div>
 
     <div class="overlayDiv"></div>
@@ -320,6 +329,6 @@
     </div> -->
 
     <script src="main.js" type="module"></script>
-    <script src="productosHome.js" type="module"></script>
+    <script src="/scripts/productosHome.js" type="module"></script>
   </body>
 </html>
