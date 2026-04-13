@@ -86,13 +86,15 @@
 
       <div id="cont_prodPromociones">
         <div class="contInfoProdProm">
-          <div class="contImgProdProm elemento">
+          <!-- <a href="./producto-indiv/productoIndiv.html"> -->
+          <div class="contImgProdProm elemento" data-id="001">
             <img
               src="./img/promProd_nutripro_1.png"
               alt=""
               class="imgProdProm"
             />
           </div>
+          <!-- </a> -->
 
           <p class="pageFontFamily prodPromText">
             Producto de promoción - Info 01
@@ -102,20 +104,22 @@
             class="buttonBase1 buttonProm buttonProdAddToCart"
             data-id="001"
           >
-            <img src="./img//icon_button_price_nutripro.png" alt="" />
+            <img src="./img/icon_button_price_nutripro.png" alt="" />
 
             <span class="pageFontFamily priceTextProdProm">S/ 200.00</span>
           </button>
         </div>
 
         <div class="contInfoProdProm">
-          <div class="contImgProdProm elemento">
+          <!-- <a href="./producto-indiv/productoIndiv.html"> -->
+          <div class="contImgProdProm elemento" data-id="002">
             <img
               src="./img/promProd_nutripro_2.png"
               alt=""
               class="imgProdProm"
             />
           </div>
+          <!-- </a> -->
 
           <p class="pageFontFamily prodPromText">
             Producto de promoción - Info 02
@@ -124,13 +128,13 @@
             class="buttonBase1 buttonProm buttonProdAddToCart"
             data-id="002"
           >
-            <img src="./img//icon_button_price_nutripro.png" alt="" />
+            <img src="./img/icon_button_price_nutripro.png" alt="" />
             <span class="pageFontFamily priceTextProdProm">S/ 200.00</span>
           </button>
         </div>
 
         <div class="contInfoProdProm">
-          <div class="contImgProdProm elemento">
+          <div class="contImgProdProm elemento" data-id="003">
             <img
               src="./img/promProd_nutripro_3.png"
               alt=""
@@ -145,13 +149,13 @@
             class="buttonBase1 buttonProm buttonProdAddToCart"
             data-id="003"
           >
-            <img src="./img//icon_button_price_nutripro.png" alt="" />
+            <img src="./img/icon_button_price_nutripro.png" alt="" />
             <span class="pageFontFamily priceTextProdProm">S/ 200.00</span>
           </button>
         </div>
 
         <div class="contInfoProdProm">
-          <div class="contImgProdProm elemento">
+          <div class="contImgProdProm elemento" data-id="004">
             <img
               src="./img/promProd_nutripro_4.png"
               alt=""
@@ -166,7 +170,7 @@
             class="buttonBase1 buttonProm buttonProdAddToCart"
             data-id="004"
           >
-            <img src="./img//icon_button_price_nutripro.png" alt="" />
+            <img src="./img/icon_button_price_nutripro.png" alt="" />
             <span class="pageFontFamily priceTextProdProm">S/ 200.00</span>
           </button>
         </div>
@@ -266,11 +270,12 @@
 
     <!-- CARRITO -->
     <div id="carritoComprasDiv" class="pageFontFamily">
+      <!-- Sect1-->
       <div class="sect1Carrito">
         <span class="titleCarrito">Carrito de compras</span>
         <img src="./img/closeButton.png" alt="" class="closeButton" />
       </div>
-
+      <!-- Sect2-->
       <div class="sect2Carrito">
         <p class="textCarritoVacio">Tu carrito de compras está vacío.</p>
         <button
@@ -281,15 +286,25 @@
         </button>
       </div>
 
+      <!-- Section Productos Carrito-->
       <div id="sectionProductosCarrito"></div>
-      <div id="setionConfirmarCompra">
-        <div><span>Subtotal</span> <span>S/ 00.00</span></div>
-        <button>Confirmar compra</button>
+
+      <!-- Section Confirmar Compra -->
+      <div id="sectionConfirmarCompra">
+        <div class="sect1ConfirmarCompra">
+          <span class="subtotalText">Subtotal</span>
+          <span class="subtotalPrice">S/ 00.00</span>
+        </div>
+        <button class="buttonBase2 buttonConfirmarCompra">
+          Confirmar compra
+        </button>
       </div>
     </div>
 
+    <!-- OVERLAY NEGRO-->
     <div class="overlayDiv"></div>
 
+    <!-- TEMPLATE ELEMENTO PRODUCTO CARRITO-->
     <template id="template-producto-carrito">
       <div class="elmProductoCarrito">
         <img src="" alt="" class="" />
@@ -314,19 +329,6 @@
         </div>
       </div>
     </template>
-
-    <!-- <div>
-      <img src="" alt="" class="" />
-      <div class="infoProdCarrito">
-        <span class="titleProdCarrito"></span>
-        <span class="priceProdCarrito"></span>
-        <div class="contCantidadCarrito">
-          <button class="buttonBase1 buttonCantidadCart">+</button>
-          <span class="cantidadNumCart"></span>
-          <button class="buttonBase1 buttonCantidadCart">-</button>
-        </div>
-      </div>
-    </div> -->
 
     <script src="./main.js" type="module"></script>
     <script src="./scripts/productosHome.js" type="module"></script>

@@ -3,13 +3,23 @@
     "id": "001",
     "nombre": "Producto de promoción 1",
     "precio": 200,
-    "img": "img/promProd_nutripro_1.png"
+    "img": "img/promProd_nutripro_1.png",
+    "imgProdIndiv": "img/producto-indiv/prodProm-details-1.png",
+    "descripcion": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros nunc, auctor ut metus id imperdiet accumsan arcu.",
+      "Morbi maximus rhoncus justo, vel feugiat dolor vestibulum sit amet."
+    ]
   },
   {
     "id": "002",
     "nombre": "Producto de promoción 2",
-    "precio": 200,
-    "img": "img/promProd_nutripro_2.png"
+    "precio": 180,
+    "img": "img/promProd_nutripro_2.png",
+    "imgProdIndiv": "img/producto-indiv/prodProm-details-2.png",
+    "descripcion": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros nunc, auctor ut metus id imperdiet accumsan arcu.",
+      "Morbi maximus rhoncus justo, vel feugiat dolor vestibulum sit amet."
+    ]
   },
   {
     "id": "003",

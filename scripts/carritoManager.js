@@ -2,6 +2,8 @@ export class CarritoManager {
   #carritoActivado;
   /**@type {Object[]} */
   #listaCarrito;
+  /**@type {Object[]} */
+  #dataProductos;
   constructor() {
     this.#carritoActivado = false;
 
@@ -44,6 +46,10 @@ export class CarritoManager {
     this.$template = document.getElementById(
       "template-producto-carrito",
     ).content;
+
+    this.elementoConfirmarCompra = document.getElementById(
+      "sectionConfirmarCompra",
+    );
 
     if (this.#listaCarrito.length > 0) {
       this.rellenarTodosElementosProductosCarrito();
@@ -109,6 +115,8 @@ export class CarritoManager {
             `Nueva cantidad d ${productoInCart.nombre}: ${productoInCart.cantidad}`,
           );
 
+          this.comprobarsubtotalProdsCarrito();
+
           if (productoInCart.cantidad <= 0) {
             this.eliminarProducto(id);
             elmProducto.remove();
@@ -135,6 +143,7 @@ export class CarritoManager {
 
   activarElementoCarrito() {
     this.comprobarVisibilidad_section2_carrito();
+    this.comprobarsubtotalProdsCarrito();
     this.toggleOverlayNegro("visible");
     this.toggleElemCarrito(true);
   }
@@ -187,6 +196,8 @@ export class CarritoManager {
       this.sect1Carrito.style.marginBottom = "210px";
       this.sect2Carrito.style.display = "flex";
       this.sect2Carrito.style.visibility = "visible";
+      this.elementoConfirmarCompra.style.display = "none";
+      this.elementoConfirmarCompra.style.visibility = "hidden";
       console.log("Sect2 carrito VISIBLE");
       return;
     }
@@ -194,6 +205,8 @@ export class CarritoManager {
     this.sect2Carrito.style.visibility = "hidden";
     this.sect2Carrito.style.display = "none";
     this.sectionProductosCarrito.style.display = "block";
+    this.elementoConfirmarCompra.style.display = "flex";
+    this.elementoConfirmarCompra.style.visibility = "visible";
     console.log("Sect2 carrito INVISIBLE");
   }
 
@@ -225,12 +238,6 @@ export class CarritoManager {
     const precio = data.precio;
     const cantidad = data.cantidad;
     const id = data.id;
-
-    console.log("ID:", id);
-    console.log("nombre:", nombre);
-    console.log("src:", src);
-    console.log("precio:", precio);
-    console.log("cantidad:", cantidad);
 
     elmProductoCarrito.setAttribute("data-id", id);
     image.classList.add("imgProdCarrito");
@@ -277,10 +284,42 @@ export class CarritoManager {
 
     localStorage.setItem("carrito", JSON.stringify(this.#listaCarrito));
 
-    console.log(
-      "%clocalStorage:",
-      "background-color: #db9b2d; color: black; font-size: 13px",
-      localStorage.carrito,
+    // console.log(
+    //   "%clocalStorage:",
+    //   "background-color: #db9b2d; color: black; font-size: 13px",
+    //   localStorage.carrito,
+    // );
+  }
+
+  comprobarsubtotalProdsCarrito() {
+    const carrito = this.listaCarrito;
+    let sumaSubtotal = 0;
+
+    if (carrito.length > 0) {
+      carrito.forEach((prod, index) => {
+        const precio = Number(prod.precio);
+        const cantidad = prod.cantidad;
+
+        sumaSubtotal += precio * cantidad;
+
+        // console.log(`precio de producto ${index}: ${precio}`);
+      });
+    }
+
+    console.log(`SUBTOTAL: ${sumaSubtotal}`);
+
+    this.asignarSubtotalAElemento(sumaSubtotal);
+  }
+
+  asignarSubtotalAElemento(subtotal) {
+    const sect1ConfirmarCompra = this.elementoConfirmarCompra.querySelector(
+      ".sect1ConfirmarCompra",
     );
+    const elementoSubtotalPrice =
+      sect1ConfirmarCompra.querySelector(".subtotalPrice");
+
+    elementoSubtotalPrice.textContent = `S/ ${subtotal}.00`;
+
+    console.log("ElementoSubtotal:", elementoSubtotalPrice);
   }
 }

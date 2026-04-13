@@ -1,0 +1,199 @@
+.pageRouteDarkFont {
+  color: #575353;
+  letter-spacing: 0px;
+  image-rendering: crisp-edges;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  padding-left: 5px;
+  margin-bottom: 67px;
+  /* background-color: gold; */
+}
+
+/* SECTION PRODUCTO INDIV. */
+#sectionProductoIndiv {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 69px;
+}
+
+#contInfoProducto {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0 83px;
+  /* background-color: rgb(81, 217, 169); */
+}
+
+.detallesProducto {
+  display: flex;
+  flex-direction: column;
+  /* background-color: coral; */
+  width: 38%;
+}
+
+.prodIndivHeader {
+  font-size: 56px;
+  font-weight: 800;
+  color: #e83737;
+  margin: 0;
+  margin-bottom: 38px;
+  line-height: 60px;
+}
+
+.priceProdIndiv {
+  font-size: 39px;
+  font-weight: 700;
+  color: #575353;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 38px;
+}
+
+.textDetailsProductoIndiv {
+  font-size: 27px;
+  color: #575353;
+  margin: 0;
+  letter-spacing: 0;
+  padding: 0;
+  margin-bottom: 33px;
+  line-height: 29px;
+}
+
+.sectAnadirAlCarrito {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 33px;
+  height: 55px;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectCantidadProdIndiv {
+  display: flex;
+  flex-direction: row;
+
+  width: 36%;
+  justify-content: space-between;
+}
+
+.btnMinusProd {
+  height: 42.46px;
+  width: 46px;
+  font-size: 31px;
+  font-weight: 600;
+  box-shadow: 0 0 0;
+  filter: drop-shadow(3px 3px 3px #00000081);
+}
+
+.btnAnadirAlCarrito {
+  height: 100%;
+  font-size: 23px;
+  font-family: "roboto";
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 52%;
+  gap: 0 7px;
+  box-shadow: 0 0 0;
+  filter: drop-shadow(3px 3px 3px #00000065);
+}
+
+.numCantidadProdIndiv {
+  font-size: 34px;
+  font-weight: 700;
+  color: #575353;
+}
+
+.contSoportesPago {
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  height: 129px;
+  justify-content: center;
+  gap: 15px 0;
+}
+
+.contImagenesSoportesPago {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 82%;
+  justify-content: space-between;
+  /* background-color: chocolate; */
+}
+
+.imgVisa {
+  height: 31px;
+}
+
+.imgSoportesPago {
+  height: 54px;
+}
+
+.titleSoportesPago {
+  margin: 0;
+  font-family: "roboto";
+  font-weight: 500;
+  color: #575353;
+  font-size: 23px;
+  /* background-color: brown; */
+}
+
+/* PRODUCTOS SIMILARES */
+
+#sectProductoSimilares {
+  display: flex;
+  flex-direction: column;
+  height: 740px;
+  background-color: white;
+  padding: 57px 134px 0 134px;
+  gap: 57px 0;
+}
+
+.contProductosSimilares {
+  display: flex;
+  flex-direction: row;
+  /* background-color: cadetblue; */
+  width: 100%;
+  justify-content: space-between;
+  height: 473px;
+}
+
+.contProdSimilar {
+  display: flex;
+  flex-direction: column;
+  gap: 27px 0;
+  align-items: center;
+}
+
+.prodSimilarTitle {
+  /* background-color: burlywood; */
+  margin: 0;
+}
+
+.btnProdSimilar {
+  margin: 0;
+  height: 63.3px;
+  width: 76%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.comentario{
+  display: none;
+}
+
+/* .imgProdIndiv{
+  width: 45%;
+} */

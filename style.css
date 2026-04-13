@@ -1,3 +1,40 @@
+/* Light */
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/Roboto-Light.ttf");
+  font-weight: 300;
+}
+/* Regular */
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+}
+/* Medium */
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/Roboto-Medium.ttf");
+  font-weight: 500;
+}
+/* SemiBold */
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/Roboto-SemiBold.ttf");
+  font-weight: 600;
+}
+/* Bold */
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+}
+/* ExtraBold */
+@font-face {
+  font-family: "roboto";
+  src: url("./fonts/Roboto-ExtraBold.ttf");
+  font-weight: 800;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +44,11 @@ a {
   color: inherit;
 }
 
+/* header {
+  position: sticky;
+  top: 0; 
+  z-index: 1000;
+} */
 html {
   background-color: rgb(0, 0, 0);
   overflow-y: scroll;
@@ -22,40 +64,30 @@ body {
 
 /* Fontfamily de la página */
 .pageFontFamily {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  font-family: "roboto";
 }
 
 /* FontStyle de headers */
 .headerFontStyle1 {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
-
-  font-weight: 500;
+  font-family: "roboto";
+  font-weight: 800;
 }
 
 .headerFontStyle2 {
+  font-weight: 800;
+}
+
+.headerFontStyle3 {
   font-weight: 700;
+  font-size: 53px;
+  color: #e83737;
+  width: 100%;
+  text-align: center;
+  /* background-color: darkorange; */
+  height: fit-content;
+  margin: 0;
+  padding: 0;
+  line-height: 0.8;
 }
 
 .headerSize1 {
@@ -278,7 +310,7 @@ nav {
   /* background-color: aqua; */
   height: fit-content;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .closeButton {
@@ -377,10 +409,12 @@ nav {
   display: flex;
   flex-direction: row;
   gap: 0 15px;
+  align-items: center;
 }
 
 .buttonCantidadCart {
   width: 34px;
+  height: 32px;
 }
 
 .buttonCantidadCart:active {
@@ -394,13 +428,46 @@ nav {
 
 /*-------------------Carrito confirmar compra-------------------*/
 
-#setionConfirmarCompra {
+#sectionConfirmarCompra {
   background-color: #e93232;
   height: 125px;
   width: 100%;
   border-radius: 5px;
   filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.371));
-  visibility: hidden;
+  visibility: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px 0;
+}
+
+.sect1ConfirmarCompra {
+  display: flex;
+  flex-direction: row;
+  /* background-color: deepskyblue; */
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-around;
+}
+
+.subtotalText {
+  font-size: 25px;
+  display: flex;
+}
+
+.subtotalPrice {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.buttonConfirmarCompra {
+  width: 80%;
+  height: 45px;
+  box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.478);
+  color: #ffeeee;
+  font-size: 21px;
 }
 
 /*-------------------SLIDER PRINCIPAL HOME-------------------*/
@@ -509,6 +576,14 @@ nav {
   margin: 0;
   font-size: 26px;
   font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.prodPromText_gray {
+  color: #575353;
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
   margin-bottom: 20px;
 }
 
@@ -664,12 +739,12 @@ footer {
 .supFooterIzq {
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 21.5%;
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  font-weight: 100;
-  /* background-color: darkblue; */
+  font-weight: 300;
+
   padding: 0;
   height: 300px;
 }
@@ -683,7 +758,7 @@ footer {
   /* background-color: coral; */
   width: 100%;
   margin: 0;
-  line-height: 20px;
+  line-height: 24px;
 }
 
 .supFooterMiddle {
