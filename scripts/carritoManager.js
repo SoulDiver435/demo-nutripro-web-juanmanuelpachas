@@ -147,7 +147,6 @@ export class CarritoManager {
     this.toggleOverlayNegro("visible");
     this.toggleElemCarrito(true);
   }
-
   desactivarElementoCarrito() {
     this.toggleOverlayNegro("hidden");
     this.toggleElemCarrito(false);
@@ -166,7 +165,6 @@ export class CarritoManager {
     this.overlayNegro.style.visibility = valor;
     this.overlayNegro.style.opacity = 1;
   }
-
   toggleElemCarrito(valor) {
     if (valor) {
       this.mostrarElmCarrito();
@@ -180,7 +178,6 @@ export class CarritoManager {
     this.elementoCarrito.style.transform = "translateX(0)";
     this.elementoCarrito.style.opacity = 1;
   }
-
   ocultarElmCarrito() {
     this.elementoCarrito.style.transform = "translateX(100%)";
     this.elementoCarrito.style.opacity = 0;
@@ -214,7 +211,6 @@ export class CarritoManager {
     this.#listaCarrito.push(producto);
     this.guardarEnLocalStorage();
   }
-
   eliminarProducto(id) {
     this.#listaCarrito = this.listaCarrito.filter((prod) => prod.id !== id);
     this.guardarEnLocalStorage();
@@ -306,7 +302,7 @@ export class CarritoManager {
       });
     }
 
-    console.log(`SUBTOTAL: ${sumaSubtotal}`);
+    // console.log(`SUBTOTAL: ${sumaSubtotal}`);
 
     this.asignarSubtotalAElemento(sumaSubtotal);
   }
@@ -320,6 +316,6 @@ export class CarritoManager {
 
     elementoSubtotalPrice.textContent = `S/ ${subtotal}.00`;
 
-    console.log("ElementoSubtotal:", elementoSubtotalPrice);
+    // console.log("ElementoSubtotal:", elementoSubtotalPrice);
   }
 }

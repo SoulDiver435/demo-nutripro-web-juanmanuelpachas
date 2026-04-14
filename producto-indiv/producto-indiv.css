@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   padding: 69px;
+ 
 }
 
 #contInfoProducto {
@@ -25,6 +26,7 @@
   justify-content: center;
   gap: 0 83px;
   /* background-color: rgb(81, 217, 169); */
+  height: fit-content;
 }
 
 .detallesProducto {
@@ -32,6 +34,7 @@
   flex-direction: column;
   /* background-color: coral; */
   width: 38%;
+ 
 }
 
 .prodIndivHeader {
@@ -80,7 +83,7 @@
   justify-content: space-between;
 }
 
-.btnMinusProd {
+.btnCantidadProd{
   height: 42.46px;
   width: 46px;
   font-size: 31px;
@@ -190,10 +193,11 @@
   font-weight: 600;
 }
 
-.comentario{
+.comentario {
   display: none;
 }
 
-/* .imgProdIndiv{
-  width: 45%;
-} */
+.imgProdIndiv {
+  width: 44%;
+  height: fit-content;
+}

@@ -20,7 +20,9 @@ const productosHomeManager = new ProductosHomeManager({
 });
 
 //Producto Individual Manager
-const prod_indiv_manager = new ProductoIndividualManager({});
+const prod_indiv_manager = new ProductoIndividualManager({
+  carritoManager: carritoManager,
+});
 
 //Depurador
 const depurador = (e) => {

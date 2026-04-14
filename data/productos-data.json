@@ -25,36 +25,66 @@
     "id": "003",
     "nombre": "Producto de promoción 3",
     "precio": 200,
-    "img": "img/promProd_nutripro_3.png"
+    "img": "img/promProd_nutripro_3.png",
+    "imgProdIndiv": "img/producto-indiv/prodProm-details-3.png",
+    "descripcion": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros nunc, auctor ut metus id imperdiet accumsan arcu.",
+      "Morbi maximus rhoncus justo, vel feugiat dolor vestibulum sit amet."
+    ]
   },
   {
     "id": "004",
     "nombre": "Producto de promoción 4",
     "precio": 200,
-    "img": "img/promProd_nutripro_4.png"
+    "img": "img/promProd_nutripro_4.png",
+    "imgProdIndiv": "img/producto-indiv/prodProm-details-4.png",
+    "descripcion": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros nunc, auctor ut metus id imperdiet accumsan arcu.",
+      "Morbi maximus rhoncus justo, vel feugiat dolor vestibulum sit amet."
+    ]
   },
   {
     "id": "005",
     "nombre": "Producto de proteínas 1",
     "precio": 200,
-    "img": "img/proteinas/prodProteinas_1.png"
+    "img": "img/proteinas/prodProteinas_1.png",
+    "imgProdIndiv": "img/producto-indiv/prodProteinas-details-1.png",
+    "descripcion": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros nunc, auctor ut metus id imperdiet accumsan arcu.",
+      "Morbi maximus rhoncus justo, vel feugiat dolor vestibulum sit amet."
+    ]
   },
   {
     "id": "006",
     "nombre": "Producto de proteínas 2",
     "precio": 200,
-    "img": "img/proteinas/prodProteinas_2.png"
+    "img": "img/proteinas/prodProteinas_2.png",
+    "imgProdIndiv": "img/producto-indiv/prodProteinas-details-2.png",
+    "descripcion": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros nunc, auctor ut metus id imperdiet accumsan arcu.",
+      "Morbi maximus rhoncus justo, vel feugiat dolor vestibulum sit amet."
+    ]
   },
   {
     "id": "007",
     "nombre": "Producto de proteínas 3",
     "precio": 200,
-    "img": "img/proteinas/prodProteinas_3.png"
+    "img": "img/proteinas/prodProteinas_3.png",
+    "imgProdIndiv": "img/producto-indiv/prodProteinas-details-3.png",
+    "descripcion": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros nunc, auctor ut metus id imperdiet accumsan arcu.",
+      "Morbi maximus rhoncus justo, vel feugiat dolor vestibulum sit amet."
+    ]
   },
   {
     "id": "008",
     "nombre": "Producto de proteínas 4",
     "precio": 200,
-    "img": "img/proteinas/prodProteinas_4.png"
+    "img": "img/proteinas/prodProteinas_4.png",
+    "imgProdIndiv": "img/producto-indiv/prodProteinas-details-4.png",
+    "descripcion": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros nunc, auctor ut metus id imperdiet accumsan arcu.",
+      "Morbi maximus rhoncus justo, vel feugiat dolor vestibulum sit amet."
+    ]
   }
 ]

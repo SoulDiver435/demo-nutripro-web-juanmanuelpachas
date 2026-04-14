@@ -58,7 +58,7 @@
       <!-- Cont. Prod. Similares -->
       <div class="contProductosSimilares">
         <div class="contInfoProdProm contProdSimilar">
-          <div class="contImgProdProm elemento">
+          <div class="contImgProdProm elemento" data-id="005">
             <img src="../img/proteinas/prodProteinas_1.png" alt="" />
           </div>
 
@@ -70,12 +70,12 @@
             data-id="005"
           >
             <img src="../img/icon_button_price_nutripro.png" alt="" />
-            <span class="priceTextProdProm">S/ 200.00</span>
+            <span class="pageFontFamily priceTextProdProm">S/ 200.00</span>
           </button>
         </div>
 
         <div class="contInfoProdProm contProdSimilar">
-          <div class="contImgProdProm elemento">
+          <div class="contImgProdProm elemento" data-id="006">
             <img src="../img/proteinas/prodProteinas_2.png" alt="" />
           </div>
 
@@ -87,12 +87,12 @@
             data-id="006"
           >
             <img src="../img/icon_button_price_nutripro.png" alt="" />
-            <span class="priceTextProdProm">S/ 200.00</span>
+            <span class="pageFontFamily priceTextProdProm">S/ 200.00</span>
           </button>
         </div>
 
         <div class="contInfoProdProm contProdSimilar">
-          <div class="contImgProdProm elemento">
+          <div class="contImgProdProm elemento" data-id="007">
             <img src="../img/proteinas/prodProteinas_3.png" alt="" />
           </div>
 
@@ -101,12 +101,12 @@
           >
           <button class="buttonBase1 btnProdSimilar">
             <img src="../img/icon_button_price_nutripro.png" alt="" />
-            <span class="priceTextProdProm">S/ 200.00</span>
+            <span class="pageFontFamily priceTextProdProm">S/ 200.00</span>
           </button>
         </div>
 
         <div class="contInfoProdProm contProdSimilar">
-          <div class="contImgProdProm elemento">
+          <div class="contImgProdProm elemento" data-id="008">
             <img src="../img/proteinas/prodProteinas_4.png" alt="" />
           </div>
           <span class="prodPromText_gray prodSimilarTitle"
@@ -114,7 +114,7 @@
           >
           <button class="buttonBase1 btnProdSimilar">
             <img src="../img/icon_button_price_nutripro.png" alt="" />
-            <span class="priceTextProdProm">S/ 200.00</span>
+            <span class="pageFontFamily priceTextProdProm">S/ 200.00</span>
           </button>
         </div>
       </div>
@@ -254,7 +254,7 @@
       <!-- Info producto -->
       <div id="contInfoProducto">
         <!-- Imagen de producto -->
-        <img src="" alt="" class="imgProdIndiv"/>
+        <img src="" alt="" class="imgProdIndiv" />
         <!-- Detalles producto -->
         <div class="detallesProducto">
           <h2 class="prodIndivHeader"></h2>
@@ -265,83 +265,19 @@
           <div class="sectAnadirAlCarrito">
             <!-- UI cantidad -->
             <div class="sectCantidadProdIndiv">
-              <button class="buttonBase2 btnMinusProd">-</button>
+              <button
+                class="buttonBase2 btnCantidadProd"
+                data-btn-cantidad="minus"
+              >
+                -
+              </button>
               <span class="numCantidadProdIndiv">1</span>
-              <button class="buttonBase2 btnMinusProd">+</button>
-            </div>
-            <!-- Botón añadir carrito-->
-            <button class="buttonBase1 btnAnadirAlCarrito">
-              <img src="../img/icon_button_price_nutripro.png" alt="" />
-              Añadir al carrito
-            </button>
-          </div>
-          <!-- Soportes de pago -->
-          <div class="contSoportesPago">
-            <h3 class="titleSoportesPago">Soportes de pago</h3>
-            <!-- Logos de soportes de pago -->
-            <div class="contImagenesSoportesPago">
-              <img
-                src="../img/producto-indiv/Visa_Inc._logo_(2005–2014).svg.png"
-                alt=""
-                class="imgVisa"
-              />
-              <img
-                src="../img/producto-indiv/Mastercard-logo.png"
-                alt=""
-                class="imgSoportesPago"
-              />
-              <img
-                src="../img/producto-indiv/plin-seeklogo.png"
-                alt=""
-                class="imgSoportesPago"
-              />
-              <img
-                src="../img/producto-indiv/Icono_de_la_aplicación_Yape.png"
-                alt=""
-                class="imgSoportesPago"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </template>
-
-    <!-- Template temporal de referencia -->
-    <template>
-      <!-- Page Route -->
-      <div class="currentPageRoute pageRouteDarkFont">
-        <img
-          src="../img/homeIconSvg_little.svg"
-          alt=""
-          class="imgCasaPageRoute"
-        />
-        <span
-          >Home > Productos > Proteínas >
-          <span class="highlightCurrentPage">Producto</span></span
-        >
-      </div>
-      <!-- Info producto -->
-      <div id="contInfoProducto">
-        <!-- Imagen de producto -->
-        <img src="../img/producto-indiv/prodProm-details-1.png" alt="" />
-        <!-- Detalles producto -->
-        <div class="detallesProducto">
-          <h2 class="prodIndivHeader">Producto de promoción - 01</h2>
-          <span class="priceProdIndiv">S/ 200.00</span>
-          <!-- Descripción de producto -->
-          <p class="textDetailsProductoIndiv">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            eros nunc, auctor ut metus id, imperdiet accumsan arcu.
-            <br /><br />
-            Morbi maximus rhoncus justo, vel feugiat dolor vestibulum sit amet.
-          </p>
-          <!-- Cantidad & btn-añadir-carrito -->
-          <div class="sectAnadirAlCarrito">
-            <!-- UI cantidad -->
-            <div class="sectCantidadProdIndiv">
-              <button class="buttonBase2 btnMinusProd">-</button>
-              <span class="numCantidadProdIndiv">1</span>
-              <button class="buttonBase2 btnMinusProd">+</button>
+              <button
+                class="buttonBase2 btnCantidadProd"
+                data-btn-cantidad="plus"
+              >
+                +
+              </button>
             </div>
             <!-- Botón añadir carrito-->
             <button class="buttonBase1 btnAnadirAlCarrito">
