@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="./facturacion.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../favicon_nutripro_temp_32x32enh.ico"
+    />
+    <title>NutriPro - Facturación</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <!-- Ícono de carrito -->
+      <a href="../index.html">
+        <img
+          src="../img/nutripro_logo1_alfa_Mesa de trabajo 1 1.png"
+          alt="Logo Nutripro"
+          style="height: 60px"
+      /></a>
+    </header>
+
+    <main id="contFacturacion" class="pageFontFamily">
+      <!-- Aside - Vista carrito Facturación -->
+      <aside class="vistaCarritoFacturacion"></aside>
+      <!-- Sección Facturación-->
+      <section class="sectFacturacion">
+        <div class="contConteoTotal">
+          <div class="columnaConteo columnaIzq">
+            <span class="normalTextConteo">Subtotal</span>
+            <span class="normalTextConteo">Envío</span>
+            <span class="totalFontIzq">Total</span>
+          </div>
+          <div class="columnaConteo columnaDer">
+            <span class="normalTextValue elmSubtotal">S/ 00.00</span
+            ><span class="normalTextValue elmEnvio">S/ 00.00</span>
+            <span class="totalFontValue elmTotal">S/ 00.00</span>
+          </div>
+        </div>
+
+        <div class="sectStripeCheckout">
+          <form id="payment-form">
+            <div id="link-authentication-element"></div>
+            <div class="grupo-form">
+              <label for="">Nombres</label>
+              <input
+                type="text"
+                id="nombre"
+                placeholder="Ingrese su nombre"
+                required
+              />
+            </div>
+            <div class="grupo-form">
+              <label for="">Apellidos</label>
+              <input
+                type="text"
+                id="apellidos"
+                placeholder="Ingrese sus apellidos"
+                required
+              />
+            </div>
+
+            <div id="payment-element"></div>
+            <button id="submit" class="buttonSubmitFacturacion">
+              <div class="spinner hidden" id="spinner"></div>
+              <span id="button-text">Efectuar Pago</span>
+            </button>
+            <div id="payment-message" class="hidden"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- Pnatilla de elemento Carrito Facturación -->
+    <template id="elemento-carrito-facturacion-template">
+      <!-- Elemento Carrito -->
+      <div class="prodCarritoFacturacion">
+        <!-- Imagen elm. Carrito -->
+        <img
+          src="../img/promProd_nutripro_1.png"
+          alt=""
+          class="imgProdCarritoFact"
+        />
+        <!-- Detalles elm. Carrito -->
+        <div class="prodcarritoFacturacionDetails">
+          <span class="prodcarritoFactTitle">Producto de promoción - 01</span>
+          <!-- Cantidad elm. Carrito -->
+          <div class="cantidadCarritoFact">
+            <button
+              class="buttonBase2 carritoFactBtnCantidad"
+              data-btn-cantidad="minus"
+            >
+              -
+            </button>
+            <span class="carritoFactCantidadNum">1</span>
+            <button
+              class="buttonBase2 carritoFactBtnCantidad"
+              data-btn-cantidad="plus"
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <!-- Precio elm. Carrito -->
+        <span class="priceCarritoFacturacion">S/ 200.00</span>
+      </div>
+    </template>
+    <script src="https://js.stripe.com/v3"></script>
+    <script src="../main.js" type="module"></script>
+  </body>
+</html>

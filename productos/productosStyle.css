@@ -10,6 +10,8 @@
 
 .buttonProductosSec {
   height: 63px;
+  font-size: 23px;
+  font-weight: 400;
   /* margin-top: 7px; */
 }
 
@@ -62,7 +64,7 @@
 }
 
 .textProducto_productos {
-  font-size: 27px;
+  font-size: 22px;
   text-align: center;
   /* background-color: darkgoldenrod; */
   height: 75px;

@@ -47,13 +47,29 @@
     </header>
 
     <!-- SLIDER GRANDE PRINCIPAL-->
+
+    <div class="slider-wrapper">
+      <div class="slider">
+        <img src="./img/slider-nutripro/slider-1.jpg" alt="" id="slider-1" />
+        <img src="./img/slider-nutripro/slider-2.jpg" alt="" id="slider-2" />
+        <img src="./img/slider-nutripro/slider-1.jpg" alt="" id="slider-3" />
+        <img src="./img/slider-nutripro/slider-2.jpg" alt="" id="slider-4" />
+      </div>
+      <div class="slider-nav">
+        <a href="#slider-1"></a>
+        <a href="#slider-2"></a>
+        <a href="#slider-3"></a>
+        <a href="#slider-4"></a>
+      </div>
+    </div>
+    <!-- 
     <section id="sliderPrincipalHome">
       <img
         src="./img//slider_nutriPro_1_2 1.png"
         alt=""
         class="imgSliderHome"
       />
-    </section>
+    </section> -->
 
     <!-- PRODUCTOS MUESTRA HOME -->
     <section id="sectionProductosHome">
@@ -314,22 +330,23 @@
           <div class="contCantidadCarrito">
             <button
               class="buttonBase1 buttonCantidadCart"
-              data-btn-cantidad="plus"
+              data-btn-cantidad="minus"
             >
-              +
+              -
             </button>
             <span class="cantidadNumCart"></span>
             <button
               class="buttonBase1 buttonCantidadCart"
-              data-btn-cantidad="minus"
+              data-btn-cantidad="plus"
             >
-              -
+              +
             </button>
           </div>
         </div>
       </div>
     </template>
 
+    <script src="https://js.stripe.com/v3"></script>
     <script src="./main.js" type="module"></script>
     <script src="./scripts/productosHome.js" type="module"></script>
   </body>

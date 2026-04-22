@@ -33,7 +33,18 @@ export class CarritoManager {
   }
 
   init() {
-    this.elementoCarrito = document.getElementById("carritoComprasDiv");
+    // this.elementoCarrito = document.getElementById("carritoComprasDiv");
+
+    this.hayCarrito = this.paginaTieneCarrito();
+
+    if (!this.hayCarrito) {
+      console.log(
+        "%cNO SE ENCUENTRA ELM. CARRITO",
+        "background-color: #cf2424; color: black; font-size: 16px; border-radius: 3px",
+      );
+      return;
+    }
+
     this.botonCarrito = document.querySelector(".imgCarrito");
     this.closeButton = document.querySelector(".closeButton");
     this.overlayNegro = document.querySelector(".overlayDiv");
@@ -45,7 +56,7 @@ export class CarritoManager {
     );
     this.$template = document.getElementById(
       "template-producto-carrito",
-    ).content;
+    )?.content;
 
     this.elementoConfirmarCompra = document.getElementById(
       "sectionConfirmarCompra",
@@ -56,7 +67,25 @@ export class CarritoManager {
     }
   }
 
-  crearListeners() {
+  paginaTieneCarrito() {
+    this.elementoCarrito = document.getElementById("carritoComprasDiv");
+
+    let tieneCarrito = false;
+
+    if (this.elementoCarrito != null) {
+      tieneCarrito = true;
+
+      console.log(
+        "%c-Se encontró Elm. Carrito-",
+        "background-color: #52dbab; color: black; font-size: 16px; border-radius: 8px",
+      );
+    }
+
+    return tieneCarrito;
+  }
+
+  crearListeners(url) {
+    if (!this.hayCarrito) return;
     //Listener botón carrito
     this.botonCarrito.addEventListener("click", () => {
       if (this.carritoActivado) return;
@@ -112,7 +141,7 @@ export class CarritoManager {
           }
 
           console.log(
-            `Nueva cantidad d ${productoInCart.nombre}: ${productoInCart.cantidad}`,
+            `Nueva cantidad de ${productoInCart.nombre}: ${productoInCart.cantidad}`,
           );
 
           this.comprobarsubtotalProdsCarrito();
@@ -139,6 +168,23 @@ export class CarritoManager {
     };
 
     this.sectionProductosCarrito.addEventListener("click", (e) => handler(e));
+
+    //Listener Botón Confirmar Compra
+    const btnConfirmarCompra = this.elementoConfirmarCompra.querySelector(
+      ".buttonConfirmarCompra",
+    );
+
+    btnConfirmarCompra.addEventListener("click", () => {
+      console.log("Btn confirmar compra clickado!!");
+
+      this.guardarEnLocalStorage();
+      const urlBase = url;
+      const urlFinal = `${window.location.origin}${urlBase}facturacion/facturacion.html`;
+
+      window.location.href = urlFinal;
+
+      console.log("urlBase:", urlBase);
+    });
   }
 
   activarElementoCarrito() {
@@ -217,7 +263,7 @@ export class CarritoManager {
   }
 
   crearElementoProductoCarrito(data) {
-    const elmProductoCarrito = this.$template.querySelector(
+    const elmProductoCarrito = this.$template?.querySelector(
       ".elmProductoCarrito",
     );
     const $fragment = document.createDocumentFragment();
@@ -256,7 +302,7 @@ export class CarritoManager {
 
     this.sectionProductosCarrito.appendChild($fragment);
 
-    console.log("template:", elmProductoCarrito);
+    // console.log("template:", elmProductoCarrito);
   }
 
   rellenarTodosElementosProductosCarrito() {

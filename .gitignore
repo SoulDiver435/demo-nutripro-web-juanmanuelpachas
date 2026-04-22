@@ -1,0 +1,12 @@
+# Dependencias
+node_modules/
+
+# Logs y archivos de sistema
+npm-debug.log*
+.DS_Store
+dist/
+build/
+
+# env
+.env
+/assets/keys.js

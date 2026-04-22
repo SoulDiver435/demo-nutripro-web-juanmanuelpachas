@@ -36,6 +36,8 @@
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -119,6 +121,7 @@ body {
   background-color: #242422;
   border: none;
   color: white;
+  font-family: "roboto";
   font-size: 25px;
   border-radius: 9px;
   display: flex;
@@ -127,6 +130,7 @@ body {
   justify-content: center;
   box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.478);
   transition: background-color 0.3s;
+  font-weight: 600;
 }
 
 .buttonBase2:hover {
@@ -389,6 +393,7 @@ nav {
   height: 100%;
   margin: 0;
   justify-content: center;
+  /* background-color: aqua; */
 }
 
 .titleProdCarrito {
@@ -399,6 +404,8 @@ nav {
   /* background-color: #fa7979; */
   height: fit-content;
   width: 140px;
+  margin: 0;
+  width: 120px;
 }
 
 .priceProdCarrito {
@@ -478,6 +485,8 @@ nav {
   margin: 0px;
   /* background-color: aqua; */
   height: fit-content;
+  visibility: hidden;
+  display: none;
 }
 
 .imgSliderHome {
@@ -574,9 +583,11 @@ nav {
 .prodPromText {
   color: white;
   margin: 0;
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin: 13px auto 20px 0;
+  /* background-color: cadetblue; */
+  width: 90%;
 }
 
 .prodPromText_gray {
@@ -589,6 +600,9 @@ nav {
 
 .contInfoProdProm {
   width: 244px;
+  display: flex;
+  flex-direction: column;
+
   /* background-color: chartreuse; */
 }
 
@@ -699,14 +713,14 @@ nav {
 }
 
 .headerSeccionAdicional {
-  font-size: 40px;
+  font-size: 37px;
   margin: 0;
   line-height: 45px;
   filter: drop-shadow(4px 3px 2px rgba(0, 0, 0, 0.432));
 }
 
 .paraphSeccionAdicional {
-  font-size: 22px;
+  font-size: 20px;
   margin: 0;
   margin-top: 12px;
 }
@@ -843,4 +857,56 @@ footer {
 
 .socialIcon:hover {
   cursor: pointer;
+}
+
+/* SLIDER */
+
+.slider-wrapper {
+  /* background-color: coral; */
+  width: 100%;
+  max-width: 1443px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 1443 / 647;
+  /* Establece la proporción en que se mostrarán las imágenes */
+  overflow-x: hidden; /* Oculta los elementos fuera en la pos X */
+  scroll-snap-type: x mandatory; /* Establece cómo se va desplazar nuestras imágenes cuando ya tengamos los botones */
+  scroll-behavior: smooth; /* Establece como se verá el movimiento en las transiciones entre slides */
+  box-shadow: 0 0.25rem 0.5rem #21212126;
+  /* border-radius: 0.5rem; */
+}
+
+.slider img {
+  flex: 1 1 100%;
+  /* le permite crecer al máximo si hay espacio | No le permite disminuir su tamaño menos de lo que se estableció, aunque el contenedor se achique | Inicia en un tamaño de 100% */
+  scroll-snap-align: start;
+  /* Con esto le decimos q se posicione en el 1er elemento del scroll */
+  object-fit: cover; /* Recorta la imagen para que no se estire. Para que la imagen no se estire feo si no encaja en el 16/9 */
+  scroll-margin-top: 0;
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.slider-nav a {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+.slider-nav a:hover {
+  opacity: 1;
 }

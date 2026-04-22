@@ -1,0 +1,247 @@
+body {
+  background-color: #f0efef;
+}
+
+/* Sección Vista Carrito */
+
+#contFacturacion {
+  /* background-color: crimson; */
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  align-items: start;
+  gap: 54px;
+  padding: 39px 92px;
+}
+
+.vistaCarritoFacturacion {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.prodCarritoFacturacion {
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 0.4fr 1.5fr 0.5fr;
+  border-radius: 12px;
+  height: 182.5px;
+  padding: 28px 33px;
+  gap: 0 30px;
+  align-items: center;
+}
+
+.prodcarritoFactTitle {
+  font-size: 23.7px;
+  font-weight: 700;
+  color: #575353;
+}
+
+.prodcarritoFacturacionDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 22px 0;
+  justify-content: start;
+  height: fit-content;
+}
+
+.imgProdCarritoFact {
+  height: 132px;
+  width: auto;
+}
+
+.cantidadCarritoFact {
+  display: flex;
+  flex-direction: row;
+  gap: 0 17px;
+  font-size: 28.8px;
+  color: #575353;
+  width: fit-content;
+}
+
+.carritoFactCantidadNum {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.carritoFactBtnCantidad {
+  height: 32.2px;
+  width: 35px;
+  font-size: 26px;
+  font-family: "roboto";
+  border-radius: 7.6px;
+  box-shadow: 0 0 0;
+  filter: drop-shadow(2px 3px 2px #00000077);
+}
+
+.priceCarritoFacturacion {
+  font-size: 23.2px;
+  color: #575353;
+  font-weight: 400;
+
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  height: 69%;
+}
+
+/* SECTION FACTURACION */
+
+/* Sección Facturación Total */
+.sectFacturacion {
+  display: flex;
+  flex-direction: column;
+  /* background-color: coral; */
+}
+
+.contConteoTotal {
+  background-color: white;
+  height: 183px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* background-color: darkkhaki; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 23px 0 23px;
+  margin-bottom: 17px;
+}
+
+/* .sectStripeCheckout {
+  height: 300px;
+} */
+
+.columnaConteo {
+  display: flex;
+  flex-direction: column;
+  /* background-color: chocolate; */
+  height: 100%;
+  justify-content: start;
+  gap: 21px 0;
+  color: #575353;
+}
+
+.columnaIzq {
+  text-align: left;
+  font-size: 24.6px;
+  font-weight: 500;
+}
+
+.normalTextConteo {
+  margin: 0;
+  height: fit-content;
+  padding: 0;
+  line-height: 21px;
+}
+
+.totalFontIzq {
+  font-size: 29.3px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.columnaDer {
+  text-align: right;
+  font-size: 22.7px;
+  font-weight: 400;
+}
+
+.normalTextValue {
+  height: fit-content;
+  line-height: 21px;
+  margin: 0;
+  padding: 0;
+}
+
+.totalFontValue {
+  font-size: 27.4px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* STRIPE CHECKOUT */
+
+.sectStripeCheckout {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 28px 23px;
+}
+
+.grupo-form {
+  color: #575353;
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+}
+
+.grupo-form input {
+  /* Dimensiones y Espaciado */
+  width: 100%; /* O los 333.6px que viste en el inspector */
+  height: 60.7px;
+  padding: 20px; /* Esto es lo que les da esa altura pro */
+  box-sizing: border-box;
+
+  /* Tipografía (Copiado de tu inspector) */
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #575353;
+  line-height: 20.7px;
+  -webkit-font-smoothing: antialiased;
+
+  /* Estética del Fondo y Bordes */
+  background-color: #f1f1f1; /* El rgb(241, 241, 241) que encontraste */
+  border: none; /* Vi que tienes border-style: none */
+  border-radius: 12px; /* Las curvas de 12px que viste */
+
+  /* Reset de estilos por defecto */
+  appearance: none;
+  outline: none;
+  display: block;
+  margin-bottom: 15px; /* Para separarlos entre sí */
+  transition: box-shadow 0.15s ease 0s;
+}
+
+.grupo-form input:focus {
+  background-color: #e8e8e8; /* Un gris un poco más oscuro al dar clic */
+  box-shadow:
+    0 0 0 1.1px #007aff,
+    0 0 0 2.9px #bfdeff;
+
+  /* Un borde fino de enfoque */
+}
+
+.grupo-form label {
+  margin-bottom: 5px;
+  line-height: 23px;
+  height: 23px;
+
+}
+
+.grupo-form input{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.buttonSubmitFacturacion {
+  margin: 30px 0 0 0;
+  width: 100%;
+  height: 63px;
+  border: none;
+  border-radius: 15px;
+  /* background-color: #e93232; */
+  color: white;
+  font-family: "roboto";
+  font-size: 24px;
+  font-weight: 500;
+  background-color: #242422;
+  transition: background-color 0.3s;
+  
+}
+
+.buttonSubmitFacturacion:hover {
+  cursor: pointer;
+  /* background-color: #ff5340; */
+  background-color: #3f3f3d;
+}
