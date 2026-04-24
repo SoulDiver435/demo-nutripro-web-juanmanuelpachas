@@ -9,9 +9,9 @@ import { SliderManager } from "./scripts/slider-manager.js";
 
 //Especificación de Ruta
 const urlBase = CONFIG.urlBase;
-const urlData = `${CONFIG.urlBase}data/productos-data.json`
+// const urlData = `${CONFIG.urlBase}data/productos-data.json`
 
-const response_productos = await fetch(urlData);
+const response_productos = await fetch("/data/productos-data.json")
 const productos_data = await response_productos.json();
 
 const serverUrl = CONFIG.serverUrl;
