@@ -1,3 +1,5 @@
+import { CONFIG } from "./config.js";
+
 export class FacturacionManager {
   /**@type {import("./carritoManager.js").CarritoManager} */
   carritoManager;
@@ -257,7 +259,7 @@ export class FacturacionManager {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/create-payment-intent",
+        `${CONFIG.serverUrl}/create-payment-intent`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
