@@ -1,12 +1,23 @@
 # Dependencias
 node_modules/
 
-# Logs y archivos de sistema
+# Logs
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos del sistema
 .DS_Store
+Thumbs.db
+
+# Builds
 dist/
 build/
 
-# env
+# Variables de entorno
 .env
-/assets/keys.js
+.env.local
+.env.*.local
+
+# IDE (opcional pero útil)
+.vscode/

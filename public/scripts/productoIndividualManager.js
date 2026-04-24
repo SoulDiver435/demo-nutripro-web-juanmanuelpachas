@@ -47,7 +47,7 @@ export class ProductoIndividualManager {
         this.guardarId(id);
 
         const urlBase = url;
-        const urlFinal = `${window.location.origin}${urlBase}producto-indiv/productoIndiv.html`;
+        const urlFinal = `${window.location.origin}${urlBase}public/producto-indiv/productoIndiv.html`;
 
         window.location.href = urlFinal;
 

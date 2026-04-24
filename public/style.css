@@ -1,37 +1,37 @@
 /* Light */
 @font-face {
   font-family: "roboto";
-  src: url("./fonts/Roboto-Light.ttf");
+  src: url("./data/fonts/Roboto-Light.ttf");
   font-weight: 300;
 }
 /* Regular */
 @font-face {
   font-family: "roboto";
-  src: url("./fonts/Roboto-Regular.ttf");
+  src: url("./data/fonts/Roboto-Regular.ttf");
   font-weight: 400;
 }
 /* Medium */
 @font-face {
   font-family: "roboto";
-  src: url("./fonts/Roboto-Medium.ttf");
+  src: url("./data/fonts/Roboto-Medium.ttf");
   font-weight: 500;
 }
 /* SemiBold */
 @font-face {
   font-family: "roboto";
-  src: url("./fonts/Roboto-SemiBold.ttf");
+  src: url("./data/fonts/Roboto-SemiBold.ttf");
   font-weight: 600;
 }
 /* Bold */
 @font-face {
   font-family: "roboto";
-  src: url("./fonts/Roboto-Bold.ttf");
+  src: url("./data/fonts/Roboto-Bold.ttf");
   font-weight: 700;
 }
 /* ExtraBold */
 @font-face {
   font-family: "roboto";
-  src: url("./fonts/Roboto-ExtraBold.ttf");
+  src: url("./data/fonts/Roboto-ExtraBold.ttf");
   font-weight: 800;
 }
 
@@ -697,12 +697,12 @@ nav {
 }
 
 .elmSeccionAdicionalHome_izq {
-  background-image: url(./img/img_secAdicional_izq.png);
+  background-image: url(./data/img/img_secAdicional_izq.png);
   background-repeat: no-repeat;
 }
 
 .elmSeccionAdicionalHome_der {
-  background-image: url(./img/img_secAdicional_der.png);
+  background-image: url(./data/img/img_secAdicional_der.png);
   background-repeat: no-repeat;
 }
 

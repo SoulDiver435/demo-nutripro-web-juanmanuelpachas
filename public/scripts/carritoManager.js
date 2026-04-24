@@ -179,7 +179,7 @@ export class CarritoManager {
 
       this.guardarEnLocalStorage();
       const urlBase = url;
-      const urlFinal = `${window.location.origin}${urlBase}facturacion/facturacion.html`;
+      const urlFinal = `${window.location.origin}${urlBase}/public/facturacion/facturacion.html`;
 
       window.location.href = urlFinal;
 

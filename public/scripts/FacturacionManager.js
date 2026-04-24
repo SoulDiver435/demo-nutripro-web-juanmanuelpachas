@@ -1,5 +1,3 @@
-import KEYS from "../assets/keys.js";
-
 export class FacturacionManager {
   /**@type {import("./carritoManager.js").CarritoManager} */
   carritoManager;
@@ -11,11 +9,16 @@ export class FacturacionManager {
   get elements() {
     return this.#elements;
   }
-  async init(urlBase) {
+  async init(urlBase, serverUrl) {
     const esPagFacturacion = this.detectarPaginaFactuacion();
+    // console.log(serverUrl);
 
     if (!esPagFacturacion) return;
-    this.#stripe = Stripe(KEYS.public);
+
+    const res = await fetch(`${serverUrl}/config`);
+    const { STRIPE_PUBLIC_KEY } = await res.json();
+
+    this.#stripe = Stripe(STRIPE_PUBLIC_KEY);
 
     this.paymentFormElm = document.querySelector("#payment-form");
 
@@ -262,13 +265,46 @@ export class FacturacionManager {
         },
       );
 
-      const { clientSecret } = await response.json();
+      const data = await response.json();
+
+      if (!response.ok) {
+        console.error("Error del servidor:", data.error);
+        return;
+      }
+
+      const { clientSecret } = data;
+
+      const elementsOptions = {
+        clientSecret: clientSecret,
+        fonts: [
+          {
+            cssSrc:
+              "https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap",
+          },
+        ],
+        appearance: {
+          theme: "flat",
+          variables: {
+            colorText: "#575353",
+            fontFamily: "Roboto, sans-serif",
+            fontWeightNormal: "400",
+            // Redondeamos a 15px para evitar renderizados borrosos por decimales
+            fontSizeBase: "20px",
+          },
+          rules: {
+            ".Input": {
+              // Usamos un número entero aquí también
+              fontSize: "18px",
+            },
+            ".Label": {
+              fontSize: "20px",
+            },
+          },
+        },
+      };
 
       //Instancia de elements
-      this.#elements = this.#stripe.elements({
-        clientSecret,
-        appearance: { theme: "flat" },
-      });
+      this.#elements = this.#stripe.elements(elementsOptions);
 
       //Componente en el HTML
       const paymentElement = this.#elements.create("payment", {
@@ -287,9 +323,30 @@ export class FacturacionManager {
     //Listener
     this.paymentFormElm.addEventListener("submit", async (e) => {
       e.preventDefault();
-
       //Botón del DOM
       const submitBtn = this.paymentFormElm.querySelector("button");
+      //Elm Mensaje Payment
+      const messageContainer = document.querySelector("#payment-message");
+
+      //Validar cantidades del DOM y del caritoManager
+      const coherenciaCantidades = this.comprobarCoherenciaCantidades();
+
+      if (coherenciaCantidades) {
+        console.log(
+          "%c--Las cantidades son coherentes--",
+          "background-color: #90db40; color: black; font-size: 14px",
+        );
+      } else {
+        console.log(
+          "%c--ERROR - Las cantidades no coinciden | No se procesará el pago--",
+          "background-color: #db4040; color: white; font-size: 16px",
+        );
+
+        messageContainer.style.color = "#e73636";
+        messageContainer.textContent = "Error: No se pudo efectuar el pago.";
+
+        return;
+      }
 
       //Validar ANTES de deshabilitar
       const valueInputNombre = this.paymentFormElm
@@ -301,7 +358,7 @@ export class FacturacionManager {
 
       //Validación de datos de input propios
       if (valueInputNombre === "" || valueInputApellido === "") {
-        const messageContainer = document.querySelector("#payment-message");
+        // const messageContainer = document.querySelector("#payment-message");
         messageContainer.textContent =
           "Por favor, completa todos los campos de identificación.";
         messageContainer.classList.remove("hidden");
@@ -320,7 +377,7 @@ export class FacturacionManager {
       //Verificar el resultado de submit()
       const { error: submitError } = await this.#elements.submit();
       if (submitError) {
-        const messageContainer = document.querySelector("#payment-message");
+        // const messageContainer = document.querySelector("#payment-message");
         messageContainer.textContent = submitError.message;
         submitBtn.disabled = false;
         return; // Sin esto, confirmPayment se llama igual con datos inválidos
@@ -330,7 +387,7 @@ export class FacturacionManager {
       const { error } = await this.#stripe.confirmPayment({
         elements: this.#elements,
         confirmParams: {
-          return_url: `${window.location.origin}${urlBase}assets/success.html`,
+          return_url: `${window.location.origin}${urlBase}/public/assets/success.html`,
           payment_method_data: {
             billing_details: {
               name: `${valueInputNombre} ${valueInputApellido}`,
@@ -340,12 +397,27 @@ export class FacturacionManager {
       });
 
       if (error) {
-        const messageContainer = document.querySelector("#payment-message");
+        // const messageContainer = document.querySelector("#payment-message");
         messageContainer.textContent = error.message;
         submitBtn.disabled = false;
 
         console.error("Stripe error completo:", error);
       }
+    });
+  }
+
+  comprobarCoherenciaCantidades() {
+    const carrito = this.carritoManager.listaCarrito;
+    const elmVistaCarrito = document.querySelector(".vistaCarritoFacturacion");
+    const elementosCantidad = elmVistaCarrito.querySelectorAll(
+      ".carritoFactCantidadNum",
+    );
+
+    if (elementosCantidad.length !== carrito.length) return false;
+
+    return carrito.every((prod, index) => {
+      const cantidadDOM = Number(elementosCantidad[index].textContent);
+      return cantidadDOM === prod.cantidad;
     });
   }
 }
