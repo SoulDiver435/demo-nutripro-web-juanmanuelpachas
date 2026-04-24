@@ -9,12 +9,16 @@ import { SliderManager } from "./scripts/slider-manager.js";
 
 //Especificación de Ruta
 const urlBase = CONFIG.urlBase;
-const urlFinal = `${window.location.origin}${urlBase}/public/data/productos-data.json`;
+const urlData = `${CONFIG.urlBase}data/productos-data.json`
+
+const response_productos = await fetch(urlData);
+const productos_data = await response_productos.json();
+
 const serverUrl = CONFIG.serverUrl;
 
-//Data
-const response_productos = await fetch(urlFinal);
-const productos_data = await response_productos.json();
+// //Data
+// const response_productos = await fetch(urlFinalDataJson)
+// const productos_data = await response_productos.json();
 
 //CarritoManager
 const carritoManager = new CarritoManager();
@@ -39,17 +43,14 @@ const facturacionManager = new FacturacionManager({
 const sliderManager = new SliderManager();
 
 sliderManager.init();
-productosHomeManager.init(productos_data);
-carritoManager.init();
-
+productosHomeManager.init(productos_data, urlBase);
+carritoManager.init(urlBase);
 carritoManager.crearListeners(urlBase);
-
 prod_indiv_manager.init(urlBase, productos_data);
 
 //Depurador
 const depurador = (e) => {
   if (e.code !== "KeyD") return;
- 
 };
 
 document.addEventListener("keydown", (e) => {

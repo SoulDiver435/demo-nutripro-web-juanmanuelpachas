@@ -107,7 +107,7 @@ export class FacturacionManager {
 
     //Reasignar Valores
     templateElmCarrito.dataset.id = id;
-    elementosTemplate.image.src = `${window.location.origin}${urlBase}${src?.replace(/^\//, "")}`;
+    elementosTemplate.image.src = `${urlBase}${src?.replace(/^\//, "")}`;
     elementosTemplate.title.textContent = nombre;
     elementosTemplate.elmCantidad.textContent = `${cantidad}`;
     elementosTemplate.elmCantidad.dataset.id = id;
@@ -383,11 +383,16 @@ export class FacturacionManager {
         return; // Sin esto, confirmPayment se llama igual con datos inválidos
       }
 
+      const successUrl = new URL(
+        `${urlBase}assets/success.html`,
+        window.location.origin,
+      ).toString();
+
       //Solicitar confirmación de pago
       const { error } = await this.#stripe.confirmPayment({
         elements: this.#elements,
         confirmParams: {
-          return_url: `${window.location.origin}${urlBase}/public/assets/success.html`,
+          return_url: successUrl,
           payment_method_data: {
             billing_details: {
               name: `${valueInputNombre} ${valueInputApellido}`,

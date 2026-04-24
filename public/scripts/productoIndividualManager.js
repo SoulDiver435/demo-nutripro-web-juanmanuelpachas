@@ -25,7 +25,7 @@ export class ProductoIndividualManager {
     this.crearListenersProdsIndividuales(url);
     this.crearElementosProductoIndividual(url);
     this.crearListenersCantidad();
-    this.crearListenerAnadirAlCarrito();
+    this.crearListenerAnadirAlCarrito(url);
   }
 
   crearListenersProdsIndividuales(url) {
@@ -47,7 +47,7 @@ export class ProductoIndividualManager {
         this.guardarId(id);
 
         const urlBase = url;
-        const urlFinal = `${window.location.origin}${urlBase}public/producto-indiv/productoIndiv.html`;
+        const urlFinal = `${urlBase}producto-indiv/productoIndiv.html`;
 
         window.location.href = urlFinal;
 
@@ -92,7 +92,7 @@ export class ProductoIndividualManager {
     elmCantidad.textContent = `${this.cantidadProvisional}`;
   }
 
-  crearListenerAnadirAlCarrito() {
+  crearListenerAnadirAlCarrito(url) {
     const btnAnadirCarrito = this.sectionProductoIndividual?.querySelector(
       ".btnAnadirAlCarrito",
     );
@@ -138,7 +138,7 @@ export class ProductoIndividualManager {
           };
 
           this.carritoManager.agregarProducto(productoTemporal);
-          this.carritoManager.crearElementoProductoCarrito(productoTemporal);
+          this.carritoManager.crearElementoProductoCarrito(productoTemporal, url);
           console.log(
             "%cEl producto NO existe : producto AGREGADO",
             "background-color: #df9b35; color: black; font-size: 14px",
@@ -305,6 +305,6 @@ export class ProductoIndividualManager {
       return;
     }
 
-    elementosTemplate.image.src = `${window.location.origin}${urlBase}${valoresDataProducto.dataSrc?.replace(/^\//, "")}`;
+    elementosTemplate.image.src = `${urlBase}${valoresDataProducto.dataSrc?.replace(/^\//, "")}`;
   }
 }

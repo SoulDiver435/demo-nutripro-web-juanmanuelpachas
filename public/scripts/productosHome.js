@@ -7,7 +7,7 @@ export class ProductosHomeManager {
     this.carritoManager = config.carritoManager;
   }
 
-  init(productos_data) {
+  init(productos_data, urlBase) {
     //Listeners Productos - Home
     this.botones_producto_home.forEach((b) => {
       b.addEventListener("click", () => {
@@ -37,7 +37,7 @@ export class ProductosHomeManager {
           if (!productoExiste) {
             console.log(`Data de producto con ID-${id}:`, producto);
             this.carritoManager.agregarProducto(producto);
-            this.carritoManager.crearElementoProductoCarrito(data);
+            this.carritoManager.crearElementoProductoCarrito(data, urlBase);
             console.log(
               "%cEl producto NO está en el carrito - producto AGREGADO",
               "background-color: #80bbff; color: black",

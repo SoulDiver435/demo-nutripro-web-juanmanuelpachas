@@ -32,9 +32,8 @@ export class CarritoManager {
     return this.#listaCarrito;
   }
 
-  init() {
-    // this.elementoCarrito = document.getElementById("carritoComprasDiv");
-
+  init(urlBase) {
+ 
     this.hayCarrito = this.paginaTieneCarrito();
 
     if (!this.hayCarrito) {
@@ -63,7 +62,7 @@ export class CarritoManager {
     );
 
     if (this.#listaCarrito.length > 0) {
-      this.rellenarTodosElementosProductosCarrito();
+      this.rellenarTodosElementosProductosCarrito(urlBase);
     }
   }
 
@@ -179,11 +178,9 @@ export class CarritoManager {
 
       this.guardarEnLocalStorage();
       const urlBase = url;
-      const urlFinal = `${window.location.origin}${urlBase}/public/facturacion/facturacion.html`;
+      const urlFinal = `${urlBase}facturacion/facturacion.html`;
 
       window.location.href = urlFinal;
-
-      console.log("urlBase:", urlBase);
     });
   }
 
@@ -262,7 +259,7 @@ export class CarritoManager {
     this.guardarEnLocalStorage();
   }
 
-  crearElementoProductoCarrito(data) {
+  crearElementoProductoCarrito(data, urlBase) {
     const elmProductoCarrito = this.$template?.querySelector(
       ".elmProductoCarrito",
     );
@@ -284,11 +281,11 @@ export class CarritoManager {
     elmProductoCarrito.setAttribute("data-id", id);
     image.classList.add("imgProdCarrito");
 
-    const repoName = window.location.pathname.split("/")[1];
-    const isGitHub = window.location.hostname.includes("github.io");
-    const urlBase = isGitHub ? `/${repoName}/` : "/";
+   
+    image.src = `${urlBase}${src}`;
 
-    image.src = `${window.location.origin}${urlBase}${src.replace(/^\//, "")}`;
+
+    
 
     infoProdCarritoDiv.querySelector(".titleProdCarrito").textContent = nombre;
     infoProdCarritoDiv.querySelector(".priceProdCarrito").textContent =
@@ -305,11 +302,11 @@ export class CarritoManager {
     // console.log("template:", elmProductoCarrito);
   }
 
-  rellenarTodosElementosProductosCarrito() {
+  rellenarTodosElementosProductosCarrito(urlbase) {
     this.#listaCarrito.forEach((prod) => {
       const data = prod;
 
-      this.crearElementoProductoCarrito(data);
+      this.crearElementoProductoCarrito(data, urlbase);
     });
   }
 
